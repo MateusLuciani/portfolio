@@ -1,3 +1,21 @@
+Este HTML é uma ótima base para o seu portfólio, Mateus! No entanto, há alguns problemas estruturais (como a posição do título interativo e o aninhamento de tags) que precisam ser corrigidos para que o site fique organizado e o JavaScript funcione no lugar certo.
+
+Aqui está a Análise dos problemas e o Código Arrumado.
+
+O que eu arrumei:
+Posição do Elemento #texto: A linha <h1> Oi, <b id="texto">Fulano</b>...</h1> estava fora do corpo principal e depois do script/rodapé. Movi para dentro do <header> para ser a primeira coisa que o aluno vê.
+
+Estrutura Semântica: Organize os projetos dentro de uma div container para facilitar o alinhamento lado a lado (CSS) no futuro.
+
+Caminhos de Imagem: Padronizei o uso de ./Imagem/ (estava misturado).
+
+Indentação: O código estava desalinhado, o que dificulta encontrar erros (como tags não fechadas). Deixei tudo alinhado.
+
+Tags Redundantes: Removi a <section> desnecessária dentro da área "Eu".
+
+Código HTML Corrigido
+HTML
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,37 +25,41 @@
     <title>Mateus - Professor e Entusiasta</title>
 </head>
 <body>
+
     <header>
-        <h1>Apresentação</h1>
-        <img src="Imagem/Captura de tela 2025-10-22 100858.png" alt="Foto Prof Mateus" width="600">
+        <h1>Oi, <b id="texto">Visitante</b>, eu ensino Programação.</h1>
+        
+        <img src="./Imagem/Captura de tela 2025-10-22 100858.png" alt="Foto do Professor Mateus" width="600">
     </header>
 
     <main>
+        <section id="projetos">
             <h2>Meus projetos</h2>
-            <section> 
-            <div>
-<img src="./Imagem/projeto-1.png">              
-                <h3>Projeto 1</h3>
-                <p>descrição do projeto</p>
-                <a href="#">Veja o projeto</a>
-            </div>
-            <div>
-              <img src="./Imagem/projeto-2.png">    
-                <h3>Projeto 2</h3>
-                <p>descrição do projeto</p>
-                <a href="#">Veja o projeto</a>
+            
+            <div class="container-projetos">
+                <div class="card-projeto">
+                    <img src="./Imagem/projeto-1.png" alt="Visualização do Projeto 1">              
+                    <h3>Projeto 1</h3>
+                    <p>Descrição do projeto de pensamento computacional.</p>
+                    <a href="#">Veja o projeto</a>
+                </div>
+
+                <div class="card-projeto">
+                    <img src="./Imagem/projeto-2.png" alt="Visualização do Projeto 2">    
+                    <h3>Projeto 2</h3>
+                    <p>Atividade sobre Geografia e dados.</p>
+                    <a href="#">Veja o projeto</a>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Eu</h2>
-            <section>
-                <p>Eu sou Mateus, professor de Geografia e Pensamento Computacional no colégio Romário Martins em Piraquara.</p>
-                <p>Sou um amante da natureza e colecionador de jogos de tabuleiro.</p>
-            </section>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Eu sou Mateus, professor de Geografia e Pensamento Computacional no colégio Romário Martins em Piraquara.</p>
+            <p>Sou um amante da natureza e colecionador de jogos de tabuleiro.</p>
         </section>
 
-        <section>
+        <section id="habilidades">
             <h2>Minhas Habilidades</h2>
             <ul>
                 <li><span>HTML</span></li>
@@ -50,11 +72,10 @@
 
     <footer>
         <h2>Entre em contato</h2>
-        <a href="https://github.com/">GitHub</a>
+        <a href="https://github.com/" target="_blank">GitHub</a>
         <p>Produzido por Professor Mateus</p>
     </footer>
-    <script src="script.js"></script>
-    <h1> Oi, <b id="texto">Fulano</b>, eu ensino Programação.</h1>
 
+    <script src="script.js"></script>
 </body>
 </html>
